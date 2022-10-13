@@ -612,8 +612,7 @@ CreateThread(function ()
     end
 end)
 
--- Added for Police Apartment Raids (to end)
-Citizen.CreateThread(function()
+Citizen.CreateThread(function()  --[[for raids 434-486]]
     for k,v in pairs(Apartments.Locations) do
         exports['qb-target']:AddBoxZone('ApartmentRaid-'..k, vector3(v.coords.enter.x, v.coords.enter.y, v.coords.enter.z), 2.0, 2.0, {
             name='ApartmentRaid-'..k,
@@ -665,4 +664,4 @@ AddEventHandler("qbcore-apartments:client:TriggerMenu", function(name)
     if getInput ~= nil then
         TriggerServerEvent("apartments:server:CheckIfOwned", name, getInput.apartment_number)
     end
-end)
+end) --[[for raids 434-486]]
