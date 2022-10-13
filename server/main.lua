@@ -228,8 +228,7 @@ QBCore.Functions.CreateCallback('apartments:GetOutfits', function(source, cb)
     end
 end)
 
--- Added for Police Apartment Raids (to end)
-function getApartmentByID(apartmentId)
+function getApartmentByID(apartmentId) --[[for raids 31-54]]
     local p = promise:new()
     local query = "SELECT * FROM apartments WHERE name = '" .. tostring(apartmentId) .. "'"
     exports.oxmysql:execute(query, {}, function(data)
@@ -252,4 +251,4 @@ AddEventHandler("apartments:server:CheckIfOwned", function(apartment, apartmentI
     else
         TriggerClientEvent("QBCore:Notify", src, "No apartment found by that apartment number.")
     end
-end)
+end) --[[for raids 31-54]]
